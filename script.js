@@ -1,12 +1,5 @@
-/*const firebaseConfig = {
-    apiKey: "AIzaSyCEKpeROzNe7W2YffsO4-PWSmmIb78-fj0",
-    authDomain: "sharcscout3.firebaseapp.com",
-    databaseURL: "https://sharcscout3.firebaseio.com",
-    projectId: "sharcscout3",
-    storageBucket: "sharcscout3.appspot.com",
-    messagingSenderId: "839512931875",
-    appId: "1:839512931875:web:002133feb48210323e3b96",
-   };*/
+//import app from 'firebase/app';
+//import 'firebase';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA4hIqLYzmOJE4ZcZ7N3I1LO9CkozJ2kr0",
@@ -20,6 +13,19 @@ const firebaseConfig = {
 };
 
 
-  
-  // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+
+var username = document.getElementById("uname").value;
+var password = document.getElementById("password").value;
+var database = firebase.database();
+
+function writeUserData(username,password) {
+  firebase.database().ref('users/' + userId).set({
+    username: username,
+    password: password,
+  });
+}
+
+database.initializeApp(firebaseConfig);
+writeUserData(username,password);
+console.log("deneme");
+console.log(username,password);

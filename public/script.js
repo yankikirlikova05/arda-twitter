@@ -1,3 +1,6 @@
+import app from 'firebase/app';
+import 'firebase';
+
 const firebaseConfig = {
   apiKey: "AIzaSyA4hIqLYzmOJE4ZcZ7N3I1LO9CkozJ2kr0",
   authDomain: "arda-twitter.firebaseapp.com",
@@ -22,7 +25,7 @@ function writeUserData(username,password) {
   });
 }
 
-
-  // Initialize Firebase
-firebase.initializeApp(firebaseConfig);
+database.initializeApp(firebaseConfig);
 writeUserData(username,password);
+console.log("deneme");
+console.log(username,password);
