@@ -13,10 +13,9 @@ const firebaseConfig = {
 };
 
 
-
-var username = document.getElementById("uname").value;
-var password = document.getElementById("password").value;
-var database = firebase.database();
+var username = window.document.getElementById("uname").value;
+var password = window.document.getElementById("password").value;
+var database = window.firebase.database();
 
 function writeUserData(username,password) {
   firebase.database().ref('users/' + userId).set({
